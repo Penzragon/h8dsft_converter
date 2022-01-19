@@ -2,6 +2,8 @@
 
 ---
 
+By [Rifky Aliffa](https://github.com/Penzragon)
+
 Instruction:
 
 - Buatlah sebuah function yang dapat mengkonversi suhu dari kelvin ke celcius, dan celcius ke kelvin.
