@@ -13,6 +13,9 @@ def celsius_kelvin(number, target):
     # Initiating converted variable
     converted = None
 
+    # Change target string to lowercase to handle uppercase letter
+    target = target.lower()
+
     if target == "c":  # Condition if target value is equal to 'c'
         converted = number - 273.15
     elif target == "k":  # Condition if target value is equal to 'k'
@@ -25,5 +28,5 @@ def celsius_kelvin(number, target):
 
 
 num = 0
-print(f"{num} degrees celsius is equal to {celsius_kelvin(num, 'k')} degrees kelvin.")
+print(f"{num} degrees celsius is equal to {celsius_kelvin(num, 'K')} degrees kelvin.")
 print(f"{num} degrees kelvin is equal to {celsius_kelvin(num, 'c')} degrees celsius.")
