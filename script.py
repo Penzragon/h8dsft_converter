@@ -56,13 +56,49 @@ def convert_to_fahrenheit(number, initial):
     return converted
 
 
+def convert_fahrenheit_to(number, target):
+    """
+    Function to convert fahrenheit to celsius or kelvin.
+
+    Args:
+        number (int): Number to convert.
+        target (str): Target temperature (k) for kelvin (c) for celsius.
+
+    Return:
+        converted (int): Convertion result
+    """
+
+    # Initiating converted variable
+    converted = None
+
+    # Change target string to lowercase to handle uppercase letter
+    target = target.lower()
+
+    if target == "c":  # Condition if target value is equal to 'c'
+        converted = round((number - 32) * 5 / 9, 2)
+    elif target == "k":  # Condition if target value is equal to 'k'
+        converted = round(((number - 32) * 5 / 9) + 273.15, 2)
+    else:  # Condition if target value is not equal to either 'c' or 'k'
+        converted = "Target value must be 'c' or 'k'"
+
+    # Returning convertion result
+    return converted
+
+
 num = 0
 print(f"{num} degrees celsius is equal to {celsius_kelvin(num, 'K')} degrees kelvin.")
 print(f"{num} degrees kelvin is equal to {celsius_kelvin(num, 'c')} degrees celsius.")
 
 print(
-    f"{num} degrees kelvin is equal to {convert_to_fahrenheit(num, 'K')} degrees fahrenheit"
+    f"{num} degrees kelvin is equal to {convert_to_fahrenheit(num, 'K')} degrees fahrenheit."
 )
 print(
-    f"{num} degrees celsius is equal to {convert_to_fahrenheit(num, 'c')} degrees fahrenheit"
+    f"{num} degrees celsius is equal to {convert_to_fahrenheit(num, 'c')} degrees fahrenheit."
+)
+
+print(
+    f"{num} degrees fahrenheit is equal to {convert_fahrenheit_to(num, 'K')} degrees kelvin."
+)
+print(
+    f"{num} degrees fahrenheit is equal to {convert_fahrenheit_to(num, 'c')} degrees celsius."
 )
